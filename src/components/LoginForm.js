@@ -10,6 +10,10 @@ import {
   Row,
   Alert,
   FormFeedback,
+  Card,
+  CardBody,
+  Col,
+  CardHeader,
 } from "reactstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers";
@@ -64,37 +68,48 @@ function LoginForm(props) {
 
   return (
     <Container>
-      <h1>Login</h1>
-
-      <Row>
-        <Form className="mt-3" onSubmit={handleSubmit(submitLogin)} noValidate>
-          <FormGroup className={errors.email ? "has-danger" : null}>
-            <Input
-              type="email"
-              name="email"
-              id="exampleEmail"
-              placeholder="john@doe.com"
-              innerRef={register}
-              invalid={errors.email ? true : false}
-            />
-            <Label for="exampleEmail">Email</Label>
-            {/* {errors.email && "email is required"} */}
-            <FormFeedback>{errors.email?.message}</FormFeedback>
-          </FormGroup>
-          <FormGroup className={errors.password ? "has-danger" : null}>
-            <Input
-              type="password"
-              name="password"
-              id="examplePassword"
-              placeholder="password"
-              innerRef={register}
-              invalid={errors.password ? true : false}
-            />
-            <Label for="examplePassword">Password</Label>
-            <FormFeedback>{errors.password?.message}</FormFeedback>
-          </FormGroup>
-          <Button color="primary">Submit</Button>
-        </Form>
+      <Row className="justify-content-center">
+        <Col lg="5" md="7" xs="10">
+          <Card className="bg-secondary shadow mt-3">
+            <CardHeader>
+              <h1 className="text-center">Login</h1>
+            </CardHeader>
+            <CardBody>
+              <Form
+                className="mt-3"
+                onSubmit={handleSubmit(submitLogin)}
+                noValidate
+              >
+                <FormGroup className={errors.email ? "has-danger" : null}>
+                  <Input
+                    type="email"
+                    name="email"
+                    id="exampleEmail"
+                    placeholder="john@doe.com"
+                    innerRef={register}
+                    invalid={errors.email ? true : false}
+                  />
+                  <Label for="exampleEmail">Email</Label>
+                  {/* {errors.email && "email is required"} */}
+                  <FormFeedback>{errors.email?.message}</FormFeedback>
+                </FormGroup>
+                <FormGroup className={errors.password ? "has-danger" : null}>
+                  <Input
+                    type="password"
+                    name="password"
+                    id="examplePassword"
+                    placeholder="password"
+                    innerRef={register}
+                    invalid={errors.password ? true : false}
+                  />
+                  <Label for="examplePassword">Password</Label>
+                  <FormFeedback>{errors.password?.message}</FormFeedback>
+                </FormGroup>
+                <Button color="primary">Submit</Button>
+              </Form>
+            </CardBody>
+          </Card>
+        </Col>
       </Row>
     </Container>
   );

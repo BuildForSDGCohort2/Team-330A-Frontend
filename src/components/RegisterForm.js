@@ -5,10 +5,8 @@ import {
   FormGroup,
   Label,
   Input,
-  FormText,
   Container,
   Row,
-  Alert,
   FormFeedback,
   CardHeader,
   CardBody,
@@ -69,7 +67,7 @@ function RegisterForm(props) {
     <Container>
       <Row className="justify-content-center">
         <Col lg="6" md="8">
-          <Card className="mt-3">
+          <Card className="mt-3 bg-secondary shadow">
             <CardHeader>
               {" "}
               <h1>Register</h1>

@@ -5,10 +5,8 @@ import {
   FormGroup,
   Label,
   Input,
-  FormText,
   Container,
   Row,
-  Alert,
   FormFeedback,
   Card,
   CardBody,
@@ -69,7 +67,7 @@ function LoginForm(props) {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Col lg="5" md="7" xs="10">
+        <Col lg="6" md="8">
           <Card className="bg-secondary shadow mt-3">
             <CardHeader>
               <h1 className="text-center">Login</h1>
